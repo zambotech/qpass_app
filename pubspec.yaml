@@ -23,6 +23,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  google_fonts:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:
@@ -41,7 +43,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/
+    - fonts/
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
@@ -56,7 +60,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+     - family: Inter
+       fonts:
+         - asset: fonts/Inter-Black-slnt=0.ttf
+         - asset: fonts/Inter-Bold-slnt=0.ttf
+         - asset: fonts/Inter-ExtraBold-slnt=0.ttf
+         - asset: fonts/Inter-ExtraLight-slnt=0.ttf
+         - asset: fonts/Inter-Light-slnt=0.ttf
+         - asset: fonts/Inter-Medium-slnt=0.ttf
+         - asset: fonts/Inter-Regular-slnt=0.ttf
+         - asset: fonts/Inter-SemiBold-slnt=0.ttf
+         - asset: fonts/Inter-Thin-slnt=0.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
