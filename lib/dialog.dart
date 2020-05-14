@@ -35,8 +35,8 @@ class _DialogBoxState extends State<DialogBox> {
               Theme.of(context).accentColor.withOpacity(0.6),
               Theme.of(context).primaryColor.withOpacity(0.3), ]),
           borderRadius: BorderRadius.only(
-            topLeft: Platform.isIOS ? Radius.elliptical(200, 100) : Radius.circular(10.0),
-            topRight: Platform.isIOS ? Radius.circular(10.0) : Radius.elliptical(200, 100),
+            topLeft: Platform.isIOS ? Radius.elliptical(200, 100) : Platform.isAndroid ? Radius.elliptical(200, 100) : Radius.circular(10.0),
+            topRight: Platform.isIOS ? Radius.circular(10.0) : Platform.isAndroid ? Radius.circular(10.0) : Radius.elliptical(200, 100),
             bottomLeft: Radius.circular(10.0),
             bottomRight: Radius.circular(10.0),
           )
@@ -45,8 +45,8 @@ class _DialogBoxState extends State<DialogBox> {
           children: <Widget>[
             Positioned(
               top: 10,
-              left: Platform.isIOS ? 10 : null,
-              right: Platform.isIOS ? null : 10,
+              left: Platform.isIOS ? 10 : Platform.isAndroid ? 10 : null,
+              right: Platform.isIOS ? null : Platform.isAndroid ? null : 10,
               child: GestureDetector(
                 child: Icon(
                   Icons.close,
@@ -63,7 +63,7 @@ class _DialogBoxState extends State<DialogBox> {
                 child: Text(
                   widget.passHolder.barangay.type,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 30
                   ),
@@ -72,21 +72,21 @@ class _DialogBoxState extends State<DialogBox> {
               )
             ),
             Positioned(
-              top: widget.isVerified ? 40 : heigth / 11,
+              top: widget.isVerified ? 50 : heigth / 11,
               left: 50,
               right: 50,
               child: Column(
                 children: <Widget>[
-                  Text( widget.isVerified ? 'QPass Holder Details' : 'Warning!',
+                  Text( widget.isVerified ? 'QPass Holder Details' : 'WARNING',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: heigth / 36,
+                      fontSize: Platform.isAndroid ? heigth / 50 : heigth / 36,
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                     ),
                   ),
                   SizedBox(height: 5,),
-                  Text( widget.isVerified ? 'Verified' : 'Not-Verified',
+                  Text( widget.isVerified ? 'VERIFIED' : 'NOT-VERIFIED',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: widget.isVerified ? Colors.green : Colors.red,
@@ -98,7 +98,7 @@ class _DialogBoxState extends State<DialogBox> {
               )
             ),
             Positioned(
-              top: 90,
+              top: 120,
               left: 20,
               right: 20,
               bottom: 00,
@@ -119,7 +119,7 @@ class _DialogBoxState extends State<DialogBox> {
         Text( 'Primary',
           style: TextStyle(
             color: Colors.black,
-            fontSize: heigth / 44,
+            fontSize: Platform.isAndroid ? heigth / 50 : heigth / 44,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -139,7 +139,7 @@ class _DialogBoxState extends State<DialogBox> {
         Text( 'Secondary',
           style: TextStyle(
             color: Colors.black,
-            fontSize: heigth / 44,
+            fontSize: Platform.isAndroid ? heigth / 50 : heigth / 44,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -159,7 +159,7 @@ class _DialogBoxState extends State<DialogBox> {
         Text( 'Barangay',
           style: TextStyle(
             color: Colors.black,
-            fontSize: heigth / 44,
+            fontSize: Platform.isAndroid ? heigth / 50 : heigth / 44,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -175,7 +175,7 @@ class _DialogBoxState extends State<DialogBox> {
         Text( 'Street',
           style: TextStyle(
             color: Colors.black,
-            fontSize: heigth / 44,
+            fontSize: Platform.isAndroid ? heigth / 50 : heigth / 44,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -190,7 +190,7 @@ class _DialogBoxState extends State<DialogBox> {
         Text( 'Contact #',
           style: TextStyle(
             color: Colors.black,
-            fontSize: heigth / 44,
+            fontSize: Platform.isAndroid ? heigth / 50 : heigth / 44,
             fontWeight: FontWeight.bold,
           ),
         ),
